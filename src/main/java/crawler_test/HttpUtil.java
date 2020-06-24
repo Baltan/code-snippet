@@ -7,6 +7,7 @@ import org.apache.http.HttpResponse;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
+import org.apache.http.client.methods.HttpRequestBase;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
@@ -64,6 +65,7 @@ public class HttpUtil {
         CloseableHttpClient client = HttpClients.createDefault();
         String queryStringParameter = buildQueryStringParameter(paramMap);
         HttpGet httpGet = new HttpGet(url + queryStringParameter);
+        addHttpHeaders(httpGet);
         HttpResponse httpResponse = client.execute(httpGet);
         HttpEntity httpEntity = httpResponse.getEntity();
         String responseContent = EntityUtils.toString(httpEntity, "UTF-8");
@@ -83,6 +85,7 @@ public class HttpUtil {
         CloseableHttpClient client = HttpClients.createDefault();
         UrlEncodedFormEntity urlEncodedFormEntity = buildFormDataParameter(paramMap);
         HttpPost httpPost = new HttpPost(url);
+        addHttpHeaders(httpPost);
         httpPost.setEntity(urlEncodedFormEntity);
         HttpResponse httpResponse = client.execute(httpPost);
         HttpEntity httpEntity = httpResponse.getEntity();
@@ -103,11 +106,27 @@ public class HttpUtil {
         CloseableHttpClient client = HttpClients.createDefault();
         StringEntity stringEntity = buildJSONParameter(paramMap);
         HttpPost httpPost = new HttpPost(url);
+        addHttpHeaders(httpPost);
         httpPost.setEntity(stringEntity);
         HttpResponse httpResponse = client.execute(httpPost);
         HttpEntity httpEntity = httpResponse.getEntity();
         String responseContent = EntityUtils.toString(httpEntity, "UTF-8");
         return responseContent;
+    }
+
+    /**
+     * 为HTTP请求添加请求头参数
+     *
+     * @param httpRequestBase
+     */
+    private static void addHttpHeaders(HttpRequestBase httpRequestBase) {
+        if (httpRequestBase instanceof HttpGet) {
+            HttpGet httpGet = (HttpGet) httpRequestBase;
+            httpGet.setHeader("x-token", "");
+        } else if (httpRequestBase instanceof HttpRequestBase) {
+            HttpPost httpPost = (HttpPost) httpRequestBase;
+            httpPost.setHeader("x-token", "");
+        }
     }
 
     /**
