@@ -1,6 +1,6 @@
-package compression_test.util;
+package pack_test.util;
 
-import compression_test.pojo.HuffmanCodingNode;
+import pack_test.pojo.HuffmanCodingNode;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 

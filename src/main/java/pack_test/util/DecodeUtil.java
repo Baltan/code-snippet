@@ -1,6 +1,6 @@
-package compression_test.util;
+package pack_test.util;
 
-import compression_test.exception.PasswordException;
+import pack_test.exception.PasswordException;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 

@@ -1,4 +1,4 @@
-package compression_test.exception;
+package pack_test.exception;
 
 /**
  * Description:

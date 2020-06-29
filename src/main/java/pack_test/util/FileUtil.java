@@ -1,4 +1,4 @@
-package compression_test.util;
+package pack_test.util;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
