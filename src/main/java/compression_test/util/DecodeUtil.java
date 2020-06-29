@@ -56,8 +56,6 @@ public class DecodeUtil {
          * 读取文件类型
          */
         String suffix = (String) ois.readObject();
-        System.out.println("=================");
-        System.out.println(suffix);
         /**
          * 读取编码后的byte数组
          */

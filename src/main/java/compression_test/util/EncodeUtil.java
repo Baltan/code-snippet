@@ -52,9 +52,7 @@ public class EncodeUtil {
          * 文件后缀
          */
         String suffix;
-        System.out.println(source);
         int dotIndex = source.lastIndexOf(".");
-        System.out.println(dotIndex);
 
         if (dotIndex != -1) {
             suffix = source.substring(dotIndex);
@@ -77,8 +75,6 @@ public class EncodeUtil {
         /**
          * 将文件类型写到目标文件中
          */
-        System.out.println("-----------------");
-        System.out.println(suffix);
         oos.writeObject(suffix);
         /**
          * 将编码后的byte数组写到目标文件中
