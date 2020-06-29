@@ -1,4 +1,4 @@
-package compression_test;
+package compression_test.pojo;
 
 /**
  * Description:

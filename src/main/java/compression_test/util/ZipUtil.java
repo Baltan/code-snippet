@@ -1,4 +1,8 @@
-package compression_test;
+package compression_test.util;
+
+import compression_test.pojo.HuffmanCodingNode;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -12,11 +16,8 @@ import java.util.*;
  * @author Baltan
  * @date 2020-06-29 16:01
  */
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class ZipUtil {
-    public static void main(String[] args) throws IOException {
-        zipFiles("/Users/Baltan/Desktop/test.xlsx", "/Users/Baltan/Desktop/test-encrypt.zip");
-    }
-
     /**
      * 哈夫曼编码表
      */
@@ -28,8 +29,13 @@ public class ZipUtil {
 
     /**
      * 使用哈夫曼编码压缩文件
+     *
+     * @param source
+     * @param destination
+     * @param password
+     * @throws IOException
      */
-    public static void zipFiles(String source, String destination) throws IOException {
+    public static void zipFiles(String source, String destination, char[] password) throws IOException {
         /**
          * 获得源文件的输入流
          */
@@ -42,8 +48,19 @@ public class ZipUtil {
          * 将源文件读取到byte数组中
          */
         fis.read(bytes);
+        /**
+         * 文件后缀
+         */
+        String suffix;
+        System.out.println(source);
+        int dotIndex = source.lastIndexOf(".");
+        System.out.println(dotIndex);
 
-        fis.close();
+        if (dotIndex != -1) {
+            suffix = source.substring(dotIndex);
+        } else {
+            suffix = "undefined";
+        }
         /**
          * 获得哈夫曼编码后的字节数组
          */
@@ -53,6 +70,16 @@ public class ZipUtil {
          */
         FileOutputStream fos = new FileOutputStream(destination);
         ObjectOutputStream oos = new ObjectOutputStream(fos);
+        /**
+         * 将加密密码写到目标文件中
+         */
+        oos.writeObject(password);
+        /**
+         * 将文件类型写到目标文件中
+         */
+        System.out.println("-----------------");
+        System.out.println(suffix);
+        oos.writeObject(suffix);
         /**
          * 将编码后的byte数组写到目标文件中
          */
@@ -66,8 +93,9 @@ public class ZipUtil {
          */
         oos.writeObject(binaryStringLength);
 
-        oos.close();
-        fos.close();
+        StreamUtil.close(fis);
+        StreamUtil.close(oos);
+        StreamUtil.close(fos);
     }
 
     /**

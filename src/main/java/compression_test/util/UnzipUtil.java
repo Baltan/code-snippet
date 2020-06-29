@@ -1,13 +1,11 @@
-package compression_test;
+package compression_test.util;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import compression_test.exception.PasswordException;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
+
+import java.io.*;
+import java.util.*;
 
 /**
  * Description:
@@ -15,6 +13,7 @@ import java.util.Map;
  * @author Baltan
  * @date 2020-06-29 16:02
  */
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class UnzipUtil {
     /**
      * 哈夫曼编码表
@@ -25,20 +24,17 @@ public class UnzipUtil {
      */
     private static int binaryStringLength;
 
-    public static void main(String[] args) throws IOException, ClassNotFoundException {
-        unzipFiles("/Users/Baltan/Desktop/test-encrypt.zip", "/Users/Baltan/Desktop/test-decrypt.xlsx");
-    }
-
     /**
      * 使用哈夫曼编码解压文件
      *
      * @param source
-     * @param destination
+     * @param directory
+     * @param password
      * @throws IOException
      * @throws ClassNotFoundException
      */
-    public static void unzipFiles(String source, String destination)
-            throws IOException, ClassNotFoundException {
+    public static void unzipFiles(String source, String directory, char[] password)
+            throws IOException, ClassNotFoundException, PasswordException {
         /**
          * 获得源文件的对象输入流
          */
@@ -47,6 +43,22 @@ public class UnzipUtil {
         /**
          * 读取对象的顺序必须和写入对象的顺序一致
          *
+         * 读取加密密码
+         */
+        char[] oldPassword = (char[]) ois.readObject();
+        /**
+         * 如果输入的解压密码错误，直接抛出异常
+         */
+        if (!Arrays.equals(password, oldPassword)) {
+            throw new PasswordException();
+        }
+        /**
+         * 读取文件类型
+         */
+        String suffix = (String) ois.readObject();
+        System.out.println("=================");
+        System.out.println(suffix);
+        /**
          * 读取编码后的byte数组
          */
         byte[] zipFile = (byte[]) ois.readObject();
@@ -65,10 +77,18 @@ public class UnzipUtil {
          * 使用指定的哈夫曼编码表进行解码
          */
         byte[] bytes = decodeHuffmanCode(zipFile, map);
+        String destination;
+
+        if (Objects.equals("undefined", suffix)) {
+            destination = directory + File.separator + UUID.randomUUID();
+        } else {
+            destination = directory + File.separator + UUID.randomUUID() + "." + suffix;
+        }
         /**
          * 创建文件输出流
          */
-        FileOutputStream fos = new FileOutputStream(destination);
+        FileOutputStream fos =
+                new FileOutputStream(destination);
         /**
          * 将解压后的文件写到目标文件中
          */
