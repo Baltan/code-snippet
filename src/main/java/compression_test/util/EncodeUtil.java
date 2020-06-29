@@ -17,7 +17,7 @@ import java.util.*;
  * @date 2020-06-29 16:01
  */
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public class ZipUtil {
+public class EncodeUtil {
     /**
      * 哈夫曼编码表
      */
@@ -35,7 +35,7 @@ public class ZipUtil {
      * @param password
      * @throws IOException
      */
-    public static void zipFiles(String source, String destination, char[] password) throws IOException {
+    public static void encode(String source, String destination, char[] password) throws IOException {
         /**
          * 获得源文件的输入流
          */

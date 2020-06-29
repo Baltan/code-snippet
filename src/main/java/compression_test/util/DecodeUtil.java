@@ -14,7 +14,7 @@ import java.util.*;
  * @date 2020-06-29 16:02
  */
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public class UnzipUtil {
+public class DecodeUtil {
     /**
      * 哈夫曼编码表
      */
@@ -33,7 +33,7 @@ public class UnzipUtil {
      * @throws IOException
      * @throws ClassNotFoundException
      */
-    public static void unzipFiles(String source, String directory, char[] password)
+    public static void decode(String source, String directory, char[] password)
             throws IOException, ClassNotFoundException, PasswordException {
         /**
          * 获得源文件的对象输入流

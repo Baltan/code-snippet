@@ -15,7 +15,7 @@ import java.util.*;
  * @date 2020-06-29 18:51
  */
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public class EncryptUtil {
+public class PackUtil {
     public static void main(String[] args) {
         List<File> chosenFile = new ArrayList<>();
         /**
@@ -118,7 +118,7 @@ public class EncryptUtil {
             String destination = parent + File.separator + UUID.randomUUID() + ".zip";
 
             try {
-                ZipUtil.zipFiles(source, destination, password);
+                EncodeUtil.encode(source, destination, password);
             } catch (Throwable t) {
                 JOptionPane.showMessageDialog(null, "加密失败！", "提示", JOptionPane.WARNING_MESSAGE);
                 t.printStackTrace();
@@ -148,7 +148,7 @@ public class EncryptUtil {
             String parent = file.getParent();
 
             try {
-                UnzipUtil.unzipFiles(source, parent, decryptPassword);
+                DecodeUtil.decode(source, parent, decryptPassword);
             } catch (PasswordException e) {
                 JOptionPane.showMessageDialog(null, "密码错误！", "提示", JOptionPane.WARNING_MESSAGE);
                 e.printStackTrace();
