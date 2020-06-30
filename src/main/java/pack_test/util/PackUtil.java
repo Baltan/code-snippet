@@ -16,7 +16,7 @@ import java.util.*;
  */
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class PackUtil {
-    public static void main(String[] args) {
+    public static void pack() {
         List<File> chosenFile = new ArrayList<>();
         /**
          * 创建一个指定标题的框架，初始不可见
