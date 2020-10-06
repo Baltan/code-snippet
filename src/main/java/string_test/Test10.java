@@ -18,5 +18,7 @@ public class Test10 {
         System.out.println(Arrays.toString("1|2|".split("\\|", 3)));
         System.out.println(Arrays.toString("1|2|".split("\\|", 2)));
         System.out.println(Arrays.toString("1|2|".split("\\|", 1)));
+        System.out.println(Arrays.toString("|||".split("\\|")));
+        System.out.println(Arrays.toString("|||".split("\\|", 4)));
     }
 }
