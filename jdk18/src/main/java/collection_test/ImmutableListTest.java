@@ -10,9 +10,8 @@ import java.util.List;
  */
 public class ImmutableListTest {
     /**
-     * <a href="https://www.pdai.tech/md/java/java8up/java9.html"></a>
-     *
      * @param args
+     * @see <a href="https://www.pdai.tech/md/java/java8up/java9.html"></a>
      */
     public static void main(String[] args) {
         /**
