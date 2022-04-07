@@ -16,10 +16,10 @@ public class Test1 {
     }
 
     /**
-     * <a href="https://www.pdai.tech/md/java/java8up/java12.html#jep-325-switch-%E8%A1%A8%E8%BE%BE%E5%BC%8F-%E9%A2%84%E8%A7%88%E7%89%88%E6%9C%AC">JEP 325: Switch 表达式 (预览版本)</a>
-     *
      * @param num
      * @return
+     * @see
+     * <a href="https://www.pdai.tech/md/java/java8up/java12.html#jep-325-switch-%E8%A1%A8%E8%BE%BE%E5%BC%8F-%E9%A2%84%E8%A7%88%E7%89%88%E6%9C%AC">JEP 325: Switch 表达式 (预览版本)</a>
      */
     private static String getEnglishNum(int num) {
         String englishNum = switch (num) {
