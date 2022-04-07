@@ -6,7 +6,11 @@
 
     <groupId>com.baltan</groupId>
     <artifactId>code-snippet</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>jdk18</module>
+    </modules>
 
     <dependencies>
         <dependency>
