@@ -11,9 +11,9 @@ import java.util.stream.Collectors;
  */
 public class FlatMappingTest {
     /**
-     * <a href="https://www.pdai.tech/md/java/java8up/java9.html#%E9%9B%86%E5%90%88stream-%E5%92%8C-optional"></a>
-     *
      * @param args
+     * @see
+     * <a href="https://www.pdai.tech/md/java/java8up/java9.html#%E9%9B%86%E5%90%88stream-%E5%92%8C-optional"></a>
      */
     public static void main(String[] args) {
         var list = List.of("a", "ab", "abc");
