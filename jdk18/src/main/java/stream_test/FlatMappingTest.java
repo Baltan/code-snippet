@@ -10,6 +10,11 @@ import java.util.stream.Collectors;
  * @date 2022/4/7 16:37
  */
 public class FlatMappingTest {
+    /**
+     * <a href="https://www.pdai.tech/md/java/java8up/java9.html#%E9%9B%86%E5%90%88stream-%E5%92%8C-optional"></a>
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         var list = List.of("a", "ab", "abc");
         var result = list.stream()
