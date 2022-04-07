@@ -9,6 +9,11 @@ import java.util.List;
  * @date 2022/4/7 16:10
  */
 public class ImmutableListTest {
+    /**
+     * <a href="https://www.pdai.tech/md/java/java8up/java9.html"></a>
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         /**
          * 不可变集合
