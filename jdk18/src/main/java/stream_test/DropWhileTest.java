@@ -10,6 +10,11 @@ import java.util.stream.Collectors;
  * @date 2022/4/7 16:13
  */
 public class DropWhileTest {
+    /**
+     * <a href="https://www.pdai.tech/md/java/java8up/java9.html#%E9%9B%86%E5%90%88stream-%E5%92%8C-optional"></a>
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         var list = List.of(1, 2, 3, 4, 5);
         System.out.println(list);
