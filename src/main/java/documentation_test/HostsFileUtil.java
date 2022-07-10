@@ -11,12 +11,26 @@ import java.net.UnknownHostException;
  */
 public class HostsFileUtil {
     public static void main(String[] args) throws UnknownHostException {
-        String[] urls = {"github.com", "gist.github.com", "assets-cdn.github.com", "raw.githubusercontent.com"
-                , "gist.githubusercontent.com", "cloud.githubusercontent.com", "camo.githubusercontent.com",
-                "avatars0.githubusercontent.com", "avatars1.githubusercontent.com", "avatars2" +
-                ".githubusercontent.com", "avatars3.githubusercontent.com", "avatars4.githubusercontent.com",
-                "avatars5.githubusercontent.com", "avatars6.githubusercontent.com", "avatars7" +
-                ".githubusercontent.com", "avatars8.githubusercontent.com"};
+        String[] urls = {
+                "github.com",
+                "gist.github.com",
+                "assets-cdn.github.com",
+                "raw.githubusercontent.com",
+                "gist.githubusercontent.com",
+                "cloud.githubusercontent.com",
+                "camo.githubusercontent.com",
+                "avatars0.githubusercontent.com",
+                "avatars1.githubusercontent.com",
+                "avatars2.githubusercontent.com",
+                "avatars3.githubusercontent.com",
+                "avatars4.githubusercontent.com",
+                "avatars5.githubusercontent.com",
+                "avatars6.githubusercontent.com",
+                "avatars7.githubusercontent.com",
+                "avatars8.githubusercontent.com",
+                "github.global.ssl.fastly.net",
+                "assets-cdn.github.com"
+        };
         getIp(urls);
     }
 
