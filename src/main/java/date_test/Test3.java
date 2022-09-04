@@ -1,7 +1,5 @@
 package date_test;
 
-import com.sun.tools.javac.util.List;
-
 import java.time.LocalDateTime;
 
 /**
