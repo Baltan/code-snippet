@@ -21,6 +21,7 @@ public class CompletableFutureTest {
                 e.printStackTrace();
             }
             container[0] = 1;
+            System.out.println(Arrays.toString(container));
         });
 
         CompletableFuture future2 = CompletableFuture.runAsync(() -> {
@@ -30,6 +31,7 @@ public class CompletableFutureTest {
                 e.printStackTrace();
             }
             container[1] = 2;
+            System.out.println(Arrays.toString(container));
         });
 
         CompletableFuture future3 = CompletableFuture.runAsync(() -> {
@@ -39,6 +41,7 @@ public class CompletableFutureTest {
                 e.printStackTrace();
             }
             container[2] = 3;
+            System.out.println(Arrays.toString(container));
         });
 
         System.out.println(Arrays.toString(container));
