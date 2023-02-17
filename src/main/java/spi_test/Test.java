@@ -7,6 +7,7 @@ import java.util.ServiceLoader;
  * 参考：
  * <a href="https://blog.csdn.net/m0_45406092/article/details/109051296"></a>
  * <a href="https://cloud.tencent.com/developer/article/1785056"></a>
+ * <a href="https://mp.weixin.qq.com/s/R9VpS2lkMut3HpmFEpPx0g"></a>
  *
  * @author Baltan
  * @date 2022/8/11 22:18
