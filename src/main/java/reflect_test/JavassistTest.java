@@ -31,7 +31,8 @@ import java.util.stream.Collectors;
  * @see <a href="https://blog.csdn.net/blueheartstone/article/details/113512479"></a>
  * @see <a href="https://cloud.tencent.com/developer/article/1489861"></a>
  * @see <a href="https://cloud.tencent.com/developer/ask/sof/127737"></a>
- * @see <a href="328f060b099044919261fd923"></a>
+ * @see <a href="https://xie.infoq.cn/article/328f060b099044919261fd923"></a>
+ * @see <a href="https://developer.aliyun.com/article/844879"></a>
  */
 public class JavassistTest {
     @SneakyThrows
