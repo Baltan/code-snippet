@@ -33,7 +33,7 @@ import java.util.stream.Collectors;
  * @see <a href="https://cloud.tencent.com/developer/ask/sof/127737"></a>
  * @see <a href="328f060b099044919261fd923"></a>
  */
-public class Test {
+public class JavassistTest {
     @SneakyThrows
     public static void main(String[] args) {
         /**
