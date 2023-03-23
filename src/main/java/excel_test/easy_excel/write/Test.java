@@ -1,4 +1,4 @@
-package excel_test.easy_excel;
+package excel_test.easy_excel.write;
 
 import com.alibaba.excel.EasyExcel;
 import com.google.common.collect.Lists;
