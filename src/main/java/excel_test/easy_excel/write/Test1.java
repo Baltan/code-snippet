@@ -2,7 +2,6 @@ package excel_test.easy_excel.write;
 
 import com.alibaba.excel.EasyExcel;
 import com.google.common.collect.Lists;
-import com.sun.istack.internal.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,6 +10,7 @@ import org.apache.commons.collections4.CollectionUtils;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
