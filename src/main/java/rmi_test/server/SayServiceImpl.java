@@ -1,5 +1,7 @@
 package rmi_test.server;
 
+import rmi_test.SayService;
+
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 

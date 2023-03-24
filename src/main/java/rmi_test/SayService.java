@@ -1,4 +1,4 @@
-package rmi_test.server;
+package rmi_test;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
@@ -7,7 +7,7 @@ import java.rmi.RemoteException;
  * Description:
  *
  * @author Baltan
- * @date 2019-03-10 17:15
+ * @date 2019-03-10 17:24
  */
 public interface SayService extends Remote {
     String say(String msg) throws RemoteException;
