@@ -9,7 +9,6 @@ import lombok.experimental.Accessors;
 import org.apache.commons.collections4.CollectionUtils;
 
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -32,12 +31,19 @@ import java.util.stream.IntStream;
  */
 public class Test1 {
     public static void main(String[] args) {
+        final String FILENAME = "/Users/Baltan/Desktop/调账.xls";
         List<Bill> data = mockData();
-        process(data);
+        process(data, FILENAME);
     }
 
-    private static <T> void process(List<T> data) {
-        final String FILENAME = "/Users/Baltan/Desktop/调账.xls";
+    /**
+     * Excel导出流程
+     *
+     * @param data
+     * @param FILENAME
+     * @param <T>
+     */
+    private static <T> void process(List<T> data, final String FILENAME) {
         final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         final Object EMPTY_OBJ = new Object();
 
@@ -82,7 +88,7 @@ public class Test1 {
         return Arrays.stream(clazz.getDeclaredFields())
                 .filter(x -> x.isAnnotationPresent(ExcelHeader.class))
                 .peek(x -> x.setAccessible(true))
-                .sorted((x, y) -> x.getAnnotation(ExcelHeader.class).order() - x.getAnnotation(ExcelHeader.class).order())
+                .sorted(Comparator.comparingInt(x -> x.getAnnotation(ExcelHeader.class).order()))
                 .collect(Collectors.toList());
     }
 
@@ -171,7 +177,7 @@ public class Test1 {
     private static <T> String getEarliest(Map<Object, Map<Object, T>> dataMap) {
         return dataMap.values().stream()
                 .flatMap(x -> x.keySet().stream())
-                .map(x -> String.valueOf(x))
+                .map(String::valueOf)
                 .min(String::compareTo)
                 .get();
     }
@@ -186,7 +192,7 @@ public class Test1 {
     private static <T> String getLatest(Map<Object, Map<Object, T>> dataMap) {
         return dataMap.values().stream()
                 .flatMap(x -> x.keySet().stream())
-                .map(x -> String.valueOf(x))
+                .map(String::valueOf)
                 .max(String::compareTo)
                 .get();
     }
@@ -206,10 +212,6 @@ public class Test1 {
              !billTime.isAfter(end); billTime = billTime.plusMonths(1L)) {
             billTimes.add(billTime);
         }
-        /**
-         * 按照字典顺序排序
-         */
-        Collections.sort(billTimes);
         return billTimes;
     }
 
@@ -229,51 +231,51 @@ public class Test1 {
                 .boxed()
                 .map(x -> new ArrayList<>())
                 .collect(Collectors.toList());
-        fields.stream()
-                .forEach(x -> {
-                    ExcelHeader annotation = x.getAnnotation(ExcelHeader.class);
-                    switch (annotation.type()) {
-                        case ORDER:
-                            headers.add(Lists.newArrayList(annotation.value()));
-                            IntStream.range(0, dataMap.size())
-                                    .forEach(i -> exportData.get(i).add(i + 1));
-                            break;
-                        case BASE_INFO:
-                        case IDENTIFIER:
-                            headers.add(Lists.newArrayList(annotation.value()));
-                            int i = 0;
-                            for (Map<Object, T> groupByTime : dataMap.values()) {
-                                T record = groupByTime.values().iterator().next();
-                                try {
-                                    exportData.get(i).add(x.get(record));
-                                } catch (IllegalAccessException e) {
-                                    e.printStackTrace();
-                                }
-                                i++;
-                            }
-                            break;
-                        case BILL_TIME:
-                            billTimes.stream()
-                                    .map(y -> y.format(formatter))
-                                    .forEach(y -> Arrays.stream(priceFields)
-                                            .forEach(z -> {
-                                                headers.add(Lists.newArrayList(y, z.getAnnotation(ExcelHeader.class).value()));
-                                                int j = 0;
-                                                for (Map<Object, T> groupByTime : dataMap.values()) {
-                                                    if (groupByTime.containsKey(y)) {
-                                                        try {
-                                                            exportData.get(j).add(z.get(groupByTime.get(y)));
-                                                        } catch (IllegalAccessException e) {
-                                                            e.printStackTrace();
-                                                        }
-                                                    } else {
-                                                        exportData.get(j).add(null);
-                                                    }
-                                                    j++;
-                                                }
-                                            }));
+        fields.forEach(x -> {
+            ExcelHeader annotation = x.getAnnotation(ExcelHeader.class);
+            switch (annotation.type()) {
+                case ORDER:
+                    headers.add(Lists.newArrayList(annotation.value()));
+                    IntStream.range(0, dataMap.size())
+                            .forEach(i -> exportData.get(i).add(i + 1));
+                    break;
+                case BASE_INFO:
+                case IDENTIFIER:
+                    headers.add(Lists.newArrayList(annotation.value()));
+                    int i = 0;
+                    for (Map<Object, T> groupByTime : dataMap.values()) {
+                        T record = groupByTime.values().iterator().next();
+                        try {
+                            exportData.get(i).add(x.get(record));
+                        } catch (IllegalAccessException e) {
+                            e.printStackTrace();
+                        }
+                        i++;
                     }
-                });
+                    break;
+                case BILL_TIME:
+                    billTimes.stream()
+                            .map(y -> y.format(formatter))
+                            .forEach(y -> Arrays.stream(priceFields)
+                                    .forEach(z -> {
+                                        headers.add(Lists.newArrayList(y, z.getAnnotation(ExcelHeader.class).value()));
+                                        int j = 0;
+                                        for (Map<Object, T> groupByTime : dataMap.values()) {
+                                            if (groupByTime.containsKey(y)) {
+                                                try {
+                                                    exportData.get(j).add(z.get(groupByTime.get(y)));
+                                                } catch (IllegalAccessException e) {
+                                                    e.printStackTrace();
+                                                }
+                                            } else {
+                                                exportData.get(j).add(null);
+                                            }
+                                            j++;
+                                        }
+                                    }));
+                default:
+            }
+        });
         return new Excel(headers, exportData);
     }
 
@@ -411,7 +413,7 @@ public class Test1 {
         @NotBlank
         String value();
 
-        @NotEmpty
+        @NotNull
         int order();
 
         @NotNull
