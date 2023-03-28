@@ -1,4 +1,4 @@
-package documentation_test;
+package excel_test.poi.write;
 
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.*;
@@ -8,41 +8,22 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
- * Description: Reference: https://blog.csdn.net/wwd0501/article/details/78780646
+ * Description: 将横向的表格变为纵向
  *
  * @author Baltan
- * @date 2019-04-21 16:22
+ * @date 2020-06-17 14:06
  */
-public class ExcelUtil {
-    public static void main(String[] args) throws IOException {
-        final String fileName = "/Users/Baltan/Desktop/资源.xlsx";
-        final String path = "/Users/Baltan/Desktop/FuckOff.xlsx";
-        final String sheetName = "FuckOff";
-
-        Map<String, String[]> map1 = parseExcel(fileName, 5);
-        Map<String, String[]> map2 = parseExcel(fileName, 6);
-
-        Map<String, String[]> map = mergeSheet(map1, map2);
-
-        createExcel(map, path, sheetName, new String[]{});
-    }
-
+public class Test2 {
     /**
      * 创建Excel文件
      *
-     * @param map
+     * @param data
      * @param path
      * @param sheetName
-     * @param titles
      */
-    public static void createExcel(Map<String, String[]> map, String path, String sheetName,
-                                   String... titles) {
-
-        int columnNum = titles.length;
+    public static void createExcel(String[][] data, String path, String sheetName) {
         /**
          * 创建一个文档
          */
@@ -52,12 +33,13 @@ public class ExcelUtil {
          */
         XSSFSheet sheet = doc.createSheet(sheetName);
         /**
-         *  设置表格列宽
+         * 行数
          */
-        for (int i = 0; i < columnNum; i++) {
-            sheet.setColumnWidth(i, 3000);
-        }
-
+        int rowNum = data.length;
+        /**
+         * 列数
+         */
+        int colNum = data[0].length;
         /**
          * 创建字体样式：11号、宋体、无边框、居中
          */
@@ -72,30 +54,16 @@ public class ExcelUtil {
 
         XSSFRow row;
         XSSFCell cell;
-
-        /**
-         * 第1行，表头行
-         */
-        row = sheet.createRow(0);
-
-        for (int i = 0; i < columnNum; i++) {
-            cell = row.createCell(i);
-            cell.setCellStyle(style);
-            cell.setCellValue(titles[i]);
-        }
-
         /**
          * 填充内容
          */
-        int count = 1;
-        for (String key : map.keySet()) {
-            String[] value = map.get(key);
-            row = sheet.createRow(count++);
+        for (int i = 0; i < colNum; i++) {
+            row = sheet.createRow(i);
 
-            for (int i = 0; i < columnNum; i++) {
-                cell = row.createCell(i);
+            for (int j = 0; j < rowNum; j++) {
+                cell = row.createCell(j);
                 cell.setCellStyle(style);
-                cell.setCellValue(value[i]);
+                cell.setCellValue(data[j][i]);
             }
         }
 
@@ -103,6 +71,7 @@ public class ExcelUtil {
          * 生成文件
          */
         FileOutputStream fos = null;
+
         try {
             fos = new FileOutputStream(path);
             doc.write(fos);
@@ -120,40 +89,6 @@ public class ExcelUtil {
     }
 
     /**
-     * 合并Excel文件的两个Sheet
-     *
-     * @param map1
-     * @param map2
-     * @return
-     */
-    public static Map<String, String[]> mergeSheet(Map<String, String[]> map1, Map<String, String[]> map2) {
-        Map<String, String[]> map = new HashMap<>(map1.size());
-
-        for (String url : map1.keySet()) {
-            String[] oldArray = map1.get(url);
-            String[] newArray = new String[oldArray.length + 1];
-
-            for (int i = 0; i < oldArray.length + 1; i++) {
-                if (i <= 4) {
-                    newArray[i] = oldArray[i];
-                } else if (i == 5) {
-                    newArray[i] = "";
-                } else {
-                    newArray[i] = oldArray[i - 1];
-                }
-            }
-            map.put(url, newArray);
-        }
-
-        for (String url : map2.keySet()) {
-            if (map.containsKey(url)) {
-                map.get(url)[5] = "√";
-            }
-        }
-        return map;
-    }
-
-    /**
      * 读取Excel文件
      *
      * @param fileName
@@ -161,10 +96,11 @@ public class ExcelUtil {
      * @return
      * @throws IOException
      */
-    public static Map<String, String[]> parseExcel(String fileName, int sheetNum) throws IOException {
+    public static String[][] parseExcel(String fileName, int sheetNum) throws IOException {
         File file = new File(fileName);
         FileInputStream fis = new FileInputStream(file);
         Workbook workbook;
+
         try {
             workbook = new XSSFWorkbook(fis);
         } catch (Exception ex) {
@@ -180,24 +116,24 @@ public class ExcelUtil {
          * 总列数
          */
         int columnNum = sheet.getRow(0).getLastCellNum();
-        Map<String, String[]> map = new HashMap<>(rowNum);
+        String[][] result = new String[rowNum + 1][columnNum];
 
-        for (int j = 1; j <= rowNum; j++) {
+        for (int j = 0; j <= rowNum; j++) {
             Row row = sheet.getRow(j);
-            String[] arr = new String[columnNum];
-            String url = getValue(row.getCell(1));
+            String[] rowData = new String[columnNum];
 
             for (int i = 0; i < columnNum; i++) {
                 Cell cell = row.getCell(i);
+
                 if (cell == null) {
-                    arr[i] = "";
+                    rowData[i] = "";
                 } else {
-                    arr[i] = getValue(cell);
+                    rowData[i] = getValue(cell);
                 }
             }
-            map.put(url, arr);
+            result[j] = rowData;
         }
-        return map;
+        return result;
     }
 
     private static String getValue(Cell cell) {
@@ -220,5 +156,10 @@ public class ExcelUtil {
                 break;
         }
         return obj;
+    }
+
+    public static void main(String[] args) throws IOException {
+        String[][] data = parseExcel("/Users/Baltan/Desktop/横着.xlsx", 0);
+        createExcel(data, "/Users/Baltan/Desktop/竖着.xlsx", "xxx");
     }
 }
