@@ -13,6 +13,7 @@ import java.util.Comparator;
 public class RenameUtil {
     public static void main(String[] args) {
         final String directoryPath = "/Users/Baltan/Desktop/未命名文件夹";
+//        final String directoryPath = "/Users/Baltan/Downloads";
         String filename = "";
         int order = 1;
         rename(directoryPath, filename, order);
@@ -33,6 +34,10 @@ public class RenameUtil {
             return;
         }
         File[] files = directory.listFiles();
+
+        if (files == null) {
+            return;
+        }
         /**
          * 将文件按照原始文件名排序
          */
