@@ -28,7 +28,7 @@ public class ClsTelegraphListener {
     private static final String URL = "https://www.cls.cn/nodeapi/updateTelegraphList";
     private static final LocalTime END_TIME = LocalTime.of(16, 10, 0);
     private static final Set<String> SEND_MESSAGE_LEVELS = Sets.newHashSet("A", "B");
-    private static final Long NEWS_EXPIRE_SECONDS = 120L;
+    private static final Long NEWS_EXPIRE_SECONDS = 30L;
 
     public static void main(String[] args) {
         while (true) {
@@ -37,7 +37,7 @@ public class ClsTelegraphListener {
             }
             startListening();
             try {
-                TimeUnit.SECONDS.sleep(10);
+                TimeUnit.SECONDS.sleep(25);
             } catch (Exception e) {
                 e.printStackTrace();
             }
