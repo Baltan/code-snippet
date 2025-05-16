@@ -21,8 +21,8 @@ import java.nio.charset.StandardCharsets;
 public class MessageUtil {
     private static final String ALGORITHM = "HmacSHA256";
     private static final String URL = "https://oapi.dingtalk.com/robot/send?timestamp=%d&sign=%s";
-    private static final String ROBOT_SECRET = "******";
-    private static final String ROBOT_ACCESS_TOKEN = "******";
+    private static final String ROBOT_SECRET = "SEC19449e34221e2faa1efcdbecebab4a747d396bc37e125b769bd7c677e3419e82";
+    private static final String ROBOT_ACCESS_TOKEN = "1df6e1975231006405bef836084133691ef8c18711c8ea5688cad137e5747688";
 
     /**
      * 发送消息
