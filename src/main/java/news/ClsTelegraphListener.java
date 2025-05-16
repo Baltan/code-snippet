@@ -70,7 +70,7 @@ public class ClsTelegraphListener {
                                             content.append(String.format("%s （%s）\t", stock.getName(), stock.getStockId()));
                                         }
                                     }
-                                    MessageUtil.sendMessage(content.toString());
+                                    MessageUtil.sendMessage(content.toString(), ObjectUtil.equals(rollDatum.getLevel(), "A"));
                                 }
                             });
                 }
