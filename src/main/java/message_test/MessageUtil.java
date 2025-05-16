@@ -28,12 +28,13 @@ public class MessageUtil {
      * 发送消息
      *
      * @param content
+     * @param atAll
      */
-    public static void sendMessage(String content) {
+    public static void sendMessage(String content, boolean atAll) {
         Long timestamp = System.currentTimeMillis();
         String sign = getDingTalkMessageSign(timestamp);
         String url = String.format(URL, timestamp, sign);
-        sendDingTalkMessage(content, url);
+        sendDingTalkMessage(content, url, atAll);
     }
 
     /**
@@ -56,15 +57,17 @@ public class MessageUtil {
      *
      * @param content
      * @param url
+     * @param atAll
      */
     @SneakyThrows
-    private static void sendDingTalkMessage(String content, String url) {
+    private static void sendDingTalkMessage(String content, String url, boolean atAll) {
         DingTalkClient client = new DefaultDingTalkClient(url);
         OapiRobotSendRequest req = new OapiRobotSendRequest();
         OapiRobotSendRequest.Text text = new OapiRobotSendRequest.Text();
         text.setContent(content);
         OapiRobotSendRequest.At at = new OapiRobotSendRequest.At();
         at.setAtUserIds(Lists.newArrayList());
+        at.setIsAtAll(atAll);
         req.setMsgtype("text");
         req.setText(text);
         req.setAt(at);
