@@ -65,7 +65,7 @@ public class ClsTelegraphListener {
                                             LocalDateTimeUtil.formatNormal(newsTime),
                                             rollDatum.getContent()));
                                     if (CollUtil.isNotEmpty(rollDatum.getStockList())) {
-                                        content.append("【关联股票】\n");
+                                        content.append("\n【关联股票】\n");
                                         for (ClsTelegraphResponse.Data.RollDatum.Stock stock : rollDatum.getStockList()) {
                                             content.append(String.format("%s （%s）\t", stock.getName(), stock.getStockId()));
                                         }
