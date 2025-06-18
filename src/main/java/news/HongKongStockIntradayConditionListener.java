@@ -18,6 +18,7 @@ import java.util.stream.Collectors;
  *
  * @author baltan
  * @date 2025/6/18 15:32
+ * @see <a href="https://quote.eastmoney.com/center/gridlist.html#hk_sh_stocks"></a>
  */
 public class HongKongStockIntradayConditionListener {
     private static final String URL = "https://push2.eastmoney.com/api/qt/clist/get?np=1&fltt=1&invt=2&cb=jQuery37108670217273211989_1750231509621&fs=b:MK0144&fields=f12,f13,f14,f19,f1,f2,f4,f3,f152,f17,f18,f15,f16,f5,f6&fid=f3&pn=1&pz=5000&po=1&dect=1&ut=fa5fd1943c7b386f172d6893dbfba10b&wbp2u=6117356146666876|0|1|0|web&_=1750231509634";
