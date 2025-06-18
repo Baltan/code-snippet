@@ -8,7 +8,7 @@ package stock;
  */
 public class ListenerStarter {
     public static void main(String[] args) {
-        ClsTelegraphListener.start();
-        HongKongStockIntradayConditionListener.start();
+        new Thread(ClsTelegraphListener::start).start();
+        new Thread(HongKongStockIntradayConditionListener::start).start();
     }
 }
