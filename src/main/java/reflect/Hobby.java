@@ -1,4 +1,4 @@
-package reflect_test;
+package reflect;
 
 public class Hobby {
         private String name;

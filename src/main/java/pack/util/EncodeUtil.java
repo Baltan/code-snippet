@@ -1,6 +1,6 @@
-package pack_test.util;
+package pack.util;
 
-import pack_test.pojo.HuffmanCodingNode;
+import pack.pojo.HuffmanCodingNode;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 

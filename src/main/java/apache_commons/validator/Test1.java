@@ -1,4 +1,4 @@
-package apache_commons_test.validator;
+package apache_commons.validator;
 
 import org.apache.commons.validator.routines.DateValidator;
 import org.apache.commons.validator.routines.EmailValidator;

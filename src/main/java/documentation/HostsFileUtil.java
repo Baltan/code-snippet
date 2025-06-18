@@ -1,4 +1,4 @@
-package documentation_test;
+package documentation;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;

@@ -1,4 +1,4 @@
-package jodd_test;
+package jodd;
 
 import jodd.http.HttpRequest;
 import jodd.http.HttpResponse;

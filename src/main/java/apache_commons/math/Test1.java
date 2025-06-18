@@ -1,4 +1,4 @@
-package apache_commons_test.math;
+package apache_commons.math;
 
 import org.apache.commons.math3.stat.descriptive.moment.*;
 import org.apache.commons.math3.stat.descriptive.rank.Max;

@@ -1,4 +1,4 @@
-package jvm_test;
+package jvm;
 
 /**
  * Description: 查看ClassLoader类的层次结构

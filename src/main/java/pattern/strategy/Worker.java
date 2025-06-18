@@ -1,4 +1,4 @@
-package pattern_test.strategy;
+package pattern.strategy;
 
 /**
  * Description:

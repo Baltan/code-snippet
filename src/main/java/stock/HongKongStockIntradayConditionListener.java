@@ -3,7 +3,7 @@ package stock;
 import cn.hutool.http.HttpResponse;
 import cn.hutool.http.HttpUtil;
 import com.alibaba.fastjson.JSON;
-import message_test.MessageUtil;
+import message.MessageUtil;
 
 import java.time.LocalTime;
 import java.util.ArrayDeque;

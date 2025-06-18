@@ -1,4 +1,4 @@
-package if_test;
+package if_statement;
 
 import java.util.HashMap;
 import java.util.Map;

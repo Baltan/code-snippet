@@ -1,4 +1,4 @@
-package postman_test;
+package postman;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

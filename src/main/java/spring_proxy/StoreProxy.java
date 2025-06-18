@@ -1,4 +1,4 @@
-package spring_proxy_test;
+package spring_proxy;
 
 /**
  * Description:

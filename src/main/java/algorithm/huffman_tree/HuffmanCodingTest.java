@@ -1,6 +1,6 @@
-package algorithm_test.huffman_tree;
+package algorithm.huffman_tree;
 
-import algorithm_test.node.HuffmanCodingNode;
+import algorithm.node.HuffmanCodingNode;
 
 import java.io.*;
 import java.util.*;

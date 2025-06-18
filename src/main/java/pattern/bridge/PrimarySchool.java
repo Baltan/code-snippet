@@ -1,4 +1,4 @@
-package pattern_test.bridge;
+package pattern.bridge;
 
 /**
  * Description:

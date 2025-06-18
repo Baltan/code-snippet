@@ -1,4 +1,4 @@
-package pattern_test.factory_method;
+package pattern.factory_method;
 
 /**
  * Description:

@@ -1,4 +1,4 @@
-package reference_test;
+package reference;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package collection_test;
+package collection;
 
 import com.google.common.primitives.Ints;
 

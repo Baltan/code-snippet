@@ -1,4 +1,4 @@
-package concurrent_test;
+package concurrent;
 
 import java.util.ArrayList;
 import java.util.Collection;

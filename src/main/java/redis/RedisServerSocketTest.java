@@ -1,4 +1,4 @@
-package redis_test;
+package redis;
 
 import java.io.IOException;
 import java.io.InputStream;

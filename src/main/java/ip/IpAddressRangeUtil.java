@@ -1,4 +1,4 @@
-package ip_test;
+package ip;
 
 import cn.hutool.core.net.Ipv4Util;
 import cn.hutool.core.net.NetUtil;

@@ -1,4 +1,4 @@
-package postman_test;
+package postman;
 
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;

@@ -1,4 +1,4 @@
-package pattern_test.decorator;
+package pattern.decorator;
 
 /**
  * Description:

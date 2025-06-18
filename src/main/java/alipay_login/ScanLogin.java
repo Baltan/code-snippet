@@ -1,4 +1,4 @@
-package alipay_login_test;
+package alipay_login;
 
 import com.alibaba.fastjson.JSONObject;
 import com.alipay.api.AlipayClient;

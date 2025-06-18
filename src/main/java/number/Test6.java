@@ -1,4 +1,4 @@
-package number_test;
+package number;
 
 import lombok.SneakyThrows;
 

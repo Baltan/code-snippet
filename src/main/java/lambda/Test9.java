@@ -1,4 +1,4 @@
-package lambda_test;
+package lambda;
 
 import java.util.Random;
 import java.util.function.IntConsumer;

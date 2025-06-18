@@ -1,4 +1,4 @@
-package algorithm_test;
+package algorithm;
 
 /**
  * Description: 汉诺塔

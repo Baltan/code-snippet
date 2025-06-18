@@ -1,4 +1,4 @@
-package io_test;
+package io;
 
 import cn.hutool.core.io.IoUtil;
 import lombok.SneakyThrows;

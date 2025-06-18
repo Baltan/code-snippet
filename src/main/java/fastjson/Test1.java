@@ -1,4 +1,4 @@
-package fastjson_test;
+package fastjson;
 
 
 import com.alibaba.fastjson.JSON;

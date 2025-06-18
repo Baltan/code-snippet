@@ -1,4 +1,4 @@
-package pattern_test.proxy.dynamic_proxy;
+package pattern.proxy.dynamic_proxy;
 
 /**
  * Description: 被代理类

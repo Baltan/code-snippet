@@ -1,4 +1,4 @@
-package return_finnaly_test;
+package return_finnaly;
 
 public class Test3 {
 

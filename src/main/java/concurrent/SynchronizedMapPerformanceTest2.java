@@ -1,4 +1,4 @@
-package concurrent_test;
+package concurrent;
 
 import java.time.Duration;
 import java.time.Instant;

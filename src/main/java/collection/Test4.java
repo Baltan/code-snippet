@@ -1,4 +1,4 @@
-package collection_test;
+package collection;
 
 import java.util.Collections;
 import java.util.SortedSet;

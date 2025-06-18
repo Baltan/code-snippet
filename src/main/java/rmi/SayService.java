@@ -1,4 +1,4 @@
-package rmi_test;
+package rmi;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;

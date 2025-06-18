@@ -1,4 +1,4 @@
-package pattern_test.adapter.object_adapter;
+package pattern.adapter.object_adapter;
 
 /**
  * Description:

@@ -1,4 +1,4 @@
-package pattern_test.singleton;
+package pattern.singleton;
 
 import java.util.HashSet;
 import java.util.Set;

@@ -1,4 +1,4 @@
-package lombok_test;
+package lombok;
 
 import java.util.HashSet;
 import java.util.Set;

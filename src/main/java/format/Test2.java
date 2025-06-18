@@ -1,4 +1,4 @@
-package format_test;
+package format;
 
 /**
  * Description: 字符串右侧填充0

@@ -1,4 +1,4 @@
-package date_test;
+package date;
 
 import java.sql.Date;
 

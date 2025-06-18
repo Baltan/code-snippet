@@ -1,4 +1,4 @@
-package jvm_test;
+package jvm;
 
 /**
  * Description:

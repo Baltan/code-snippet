@@ -1,10 +1,10 @@
-package annotation_test;
+package annotation;
 
+
+import java.lang.annotation.*;
 
 import static java.lang.annotation.ElementType.METHOD;
 import static java.lang.annotation.ElementType.TYPE;
-
-import java.lang.annotation.*;
 
 @Repeatable(MyAnnotations.class)
 @Target({METHOD, TYPE})

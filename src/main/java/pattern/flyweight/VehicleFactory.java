@@ -1,4 +1,4 @@
-package pattern_test.flyweight;
+package pattern.flyweight;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package system_test;
+package system;
 
 import java.io.File;
 import java.nio.file.Paths;

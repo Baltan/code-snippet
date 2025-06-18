@@ -1,4 +1,4 @@
-package pattern_test.abstract_factory;
+package pattern.abstract_factory;
 
 /**
  * Description:

@@ -1,4 +1,4 @@
-package crypt_test;
+package crypt;
 
 import java.security.KeyPairGenerator;
 

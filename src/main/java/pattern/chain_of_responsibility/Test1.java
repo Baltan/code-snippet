@@ -1,4 +1,4 @@
-package pattern_test.chain_of_responsibility;
+package pattern.chain_of_responsibility;
 
 /**
  * Description:

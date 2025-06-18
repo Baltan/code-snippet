@@ -1,4 +1,4 @@
-package jackson_test;
+package jackson;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

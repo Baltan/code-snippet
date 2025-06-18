@@ -1,4 +1,4 @@
-package joda_time_test;
+package joda_time;
 
 import org.joda.time.DateTime;
 

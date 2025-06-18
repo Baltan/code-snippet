@@ -1,6 +1,6 @@
-package pattern_test.adapter.object_adapter;
+package pattern.adapter.object_adapter;
 
-import pattern_test.adapter.class_adapter.Voltage;
+import pattern.adapter.class_adapter.Voltage;
 
 /**
  * Description:

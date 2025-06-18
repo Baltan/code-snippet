@@ -1,4 +1,4 @@
-package pack_test.util;
+package pack.util;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;

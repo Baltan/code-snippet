@@ -1,6 +1,6 @@
-package pack_test.util;
+package pack.util;
 
-import pack_test.exception.PasswordException;
+import pack.exception.PasswordException;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 

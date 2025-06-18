@@ -1,4 +1,4 @@
-package optional_test;
+package optional;
 
 import lombok.Data;
 

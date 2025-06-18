@@ -1,4 +1,4 @@
-package pack_test.pojo;
+package pack.pojo;
 
 /**
  * Description:

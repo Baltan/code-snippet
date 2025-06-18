@@ -1,4 +1,4 @@
-package pattern_test.prototype;
+package pattern.prototype;
 
 import java.time.LocalDateTime;
 

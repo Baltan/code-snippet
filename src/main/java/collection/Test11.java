@@ -1,4 +1,4 @@
-package collection_test;
+package collection;
 
 import java.util.Arrays;
 import java.util.Comparator;

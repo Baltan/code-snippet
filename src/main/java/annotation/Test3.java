@@ -1,4 +1,4 @@
-package annotation_test;
+package annotation;
 
 /**
  * Description:

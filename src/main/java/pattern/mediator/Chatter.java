@@ -1,4 +1,4 @@
-package pattern_test.mediator;
+package pattern.mediator;
 
 /**
  * Description:

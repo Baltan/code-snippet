@@ -1,6 +1,6 @@
-package algorithm_test.binary_tree;
+package algorithm.binary_tree;
 
-import algorithm_test.node.TreeNode;
+import algorithm.node.TreeNode;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

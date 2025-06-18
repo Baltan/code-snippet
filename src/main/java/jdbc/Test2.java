@@ -1,6 +1,6 @@
-package jdbc_test;
+package jdbc;
 
-import jdbc_test.entity.ApplyForm;
+import jdbc.entity.ApplyForm;
 
 import java.sql.*;
 import java.util.ArrayList;

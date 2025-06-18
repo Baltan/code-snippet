@@ -1,4 +1,4 @@
-package jdbc_test.entity;
+package jdbc.entity;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;

@@ -1,4 +1,4 @@
-package format_test;
+package format;
 
 import java.text.NumberFormat;
 

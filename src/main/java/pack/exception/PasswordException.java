@@ -1,4 +1,4 @@
-package pack_test.exception;
+package pack.exception;
 
 /**
  * Description:

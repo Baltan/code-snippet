@@ -1,4 +1,4 @@
-package stream_test;
+package stream;
 
 import org.springframework.mock.web.MockMultipartFile;
 import org.springframework.web.multipart.MultipartFile;

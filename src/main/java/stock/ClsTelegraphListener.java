@@ -8,7 +8,7 @@ import cn.hutool.http.HttpResponse;
 import cn.hutool.http.HttpUtil;
 import com.alibaba.fastjson.JSON;
 import com.google.common.collect.Sets;
-import message_test.MessageUtil;
+import message.MessageUtil;
 
 import java.time.LocalDateTime;
 import java.time.LocalTime;

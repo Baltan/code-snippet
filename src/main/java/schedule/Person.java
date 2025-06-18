@@ -1,4 +1,4 @@
-package schedule_test;
+package schedule;
 
 import java.util.TimerTask;
 

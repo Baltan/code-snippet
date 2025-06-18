@@ -1,6 +1,6 @@
-package algorithm_test.threaded_binary_tree;
+package algorithm.threaded_binary_tree;
 
-import algorithm_test.node.ThreadedTreeNode;
+import algorithm.node.ThreadedTreeNode;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package system_test;
+package system;
 
 import java.util.Arrays;
 

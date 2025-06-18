@@ -1,4 +1,4 @@
-package algorithm_test.node;
+package algorithm.node;
 
 /**
  * Description:

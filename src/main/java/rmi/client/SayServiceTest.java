@@ -1,6 +1,6 @@
-package rmi_test.client;
+package rmi.client;
 
-import rmi_test.SayService;
+import rmi.SayService;
 
 import java.net.MalformedURLException;
 import java.rmi.Naming;

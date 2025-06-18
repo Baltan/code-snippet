@@ -1,4 +1,4 @@
-package postman_test;
+package postman;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 

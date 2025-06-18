@@ -1,4 +1,4 @@
-package spring_proxy_test;
+package spring_proxy;
 
 /**
  * Description: 假如在一个未开启事务的方法中调用一个开启事务的方法，不会添加事务

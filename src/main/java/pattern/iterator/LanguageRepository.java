@@ -1,4 +1,4 @@
-package pattern_test.iterator;
+package pattern.iterator;
 
 import java.util.ArrayList;
 import java.util.List;

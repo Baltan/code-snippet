@@ -1,4 +1,4 @@
-package reference_test;
+package reference;
 
 
 import com.fasterxml.jackson.databind.ObjectMapper;

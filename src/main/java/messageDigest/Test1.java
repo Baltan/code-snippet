@@ -1,4 +1,4 @@
-package messageDigest_test;
+package messageDigest;
 
 import java.security.MessageDigest;
 

@@ -1,4 +1,4 @@
-package pattern_test.iterator;
+package pattern.iterator;
 
 /**
  * Description:

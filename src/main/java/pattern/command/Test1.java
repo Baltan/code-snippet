@@ -1,4 +1,4 @@
-package pattern_test.command;
+package pattern.command;
 
 /**
  * Description:

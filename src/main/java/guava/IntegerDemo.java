@@ -1,4 +1,4 @@
-package guava_test;
+package guava;
 
 import com.google.common.primitives.Ints;
 

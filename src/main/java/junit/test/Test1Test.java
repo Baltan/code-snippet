@@ -1,6 +1,6 @@
-package junit_test.test;
+package junit.test;
 
-import junit_test.Test1;
+import junit.Test1;
 import org.junit.*;
 
 import static org.hamcrest.Matchers.*;

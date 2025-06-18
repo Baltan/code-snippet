@@ -1,4 +1,4 @@
-package spi_test;
+package spi;
 
 /**
  * Description:

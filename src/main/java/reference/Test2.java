@@ -1,4 +1,4 @@
-package reference_test;
+package reference;
 
 import java.lang.ref.*;
 import java.util.HashSet;

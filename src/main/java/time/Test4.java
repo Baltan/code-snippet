@@ -1,4 +1,4 @@
-package time_test;
+package time;
 
 import java.time.Duration;
 import java.time.Instant;

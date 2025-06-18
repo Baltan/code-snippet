@@ -1,4 +1,4 @@
-package base64_test;
+package base64;
 
 import sun.misc.BASE64Decoder;
 import sun.misc.BASE64Encoder;

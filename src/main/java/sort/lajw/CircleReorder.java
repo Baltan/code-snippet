@@ -1,4 +1,4 @@
-package sort_test.lajw;
+package sort.lajw;
 
 import org.apache.commons.collections4.CollectionUtils;
 

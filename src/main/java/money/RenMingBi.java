@@ -1,4 +1,4 @@
-package money_test;
+package money;
 
 /**
  * Reference: https://blog.csdn.net/lizhi_java/article/details/51441119

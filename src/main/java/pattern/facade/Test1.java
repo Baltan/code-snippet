@@ -1,4 +1,4 @@
-package pattern_test.facade;
+package pattern.facade;
 
 /**
  * Description:

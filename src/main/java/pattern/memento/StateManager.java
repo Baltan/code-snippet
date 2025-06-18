@@ -1,4 +1,4 @@
-package pattern_test.memento;
+package pattern.memento;
 
 /**
  * Description:

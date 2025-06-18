@@ -1,4 +1,4 @@
-package concurrent_test;
+package concurrent;
 
 import java.util.concurrent.LinkedTransferQueue;
 import java.util.concurrent.TimeUnit;

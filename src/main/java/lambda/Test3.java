@@ -1,4 +1,4 @@
-package lambda_test;
+package lambda;
 
 /**
  * Description:

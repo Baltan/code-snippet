@@ -1,4 +1,4 @@
-package flash_sale_test;
+package flash_sale;
 
 import redis.clients.jedis.Jedis;
 

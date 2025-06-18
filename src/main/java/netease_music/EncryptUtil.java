@@ -1,4 +1,4 @@
-package netease_music_test;
+package netease_music;
 
 import com.alibaba.fastjson.JSON;
 import sun.misc.BASE64Encoder;

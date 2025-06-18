@@ -1,4 +1,4 @@
-package pdf_test.read;
+package pdf.read;
 
 import com.itextpdf.text.pdf.PdfReader;
 import com.itextpdf.text.pdf.parser.PdfReaderContentParser;

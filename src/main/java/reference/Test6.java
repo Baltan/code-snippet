@@ -1,4 +1,4 @@
-package reference_test;
+package reference;
 
 /**
  * Description: reference: http://www.codeceo.com/article/java-gc-part-one.html

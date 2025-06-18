@@ -1,4 +1,4 @@
-package concurrent_test;
+package concurrent;
 
 import java.util.*;
 import java.util.concurrent.CopyOnWriteArrayList;

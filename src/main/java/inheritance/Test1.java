@@ -1,4 +1,4 @@
-package extends_test;
+package inheritance; 
 
 public class Test1 extends TestParent {
 

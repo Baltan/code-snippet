@@ -1,4 +1,4 @@
-package pattern_test.builder;
+package pattern.builder;
 
 /**
  * Description:

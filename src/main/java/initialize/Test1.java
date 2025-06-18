@@ -1,4 +1,4 @@
-package initialize_test;
+package initialize;
 
 
 /**

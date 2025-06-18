@@ -1,4 +1,4 @@
-package pattern_test.flyweight;
+package pattern.flyweight;
 
 /**
  * Description:

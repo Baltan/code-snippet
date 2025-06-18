@@ -1,4 +1,4 @@
-package puzzle_test;
+package puzzle;
 
 /**
  * Description: https://developer.aliyun.com/article/705658

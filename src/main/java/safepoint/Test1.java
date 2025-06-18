@@ -1,4 +1,4 @@
-package safepoint_test;
+package safepoint;
 
 import java.util.concurrent.atomic.AtomicInteger;
 

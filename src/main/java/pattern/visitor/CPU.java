@@ -1,4 +1,4 @@
-package pattern_test.visitor;
+package pattern.visitor;
 
 /**
  * Description:

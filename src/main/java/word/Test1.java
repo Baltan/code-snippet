@@ -1,4 +1,4 @@
-package word_test;
+package word;
 
 import freemarker.template.Configuration;
 import freemarker.template.Template;

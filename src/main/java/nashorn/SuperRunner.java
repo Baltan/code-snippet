@@ -1,4 +1,4 @@
-package nashorn_test;
+package nashorn;
 
 /**
  * Description:

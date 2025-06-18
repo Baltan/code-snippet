@@ -1,4 +1,4 @@
-package time_test;
+package time;
 
 import java.sql.Timestamp;
 import java.text.DateFormat;

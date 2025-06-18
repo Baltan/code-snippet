@@ -1,4 +1,4 @@
-package generic_test;
+package generic;
 
 
 /**

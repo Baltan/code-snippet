@@ -1,7 +1,7 @@
-package algorithm_test.binary_search_tree;
+package algorithm.binary_search_tree;
 
-import algorithm_test.binary_tree.PreOrderTest;
-import algorithm_test.node.TreeNode;
+import algorithm.binary_tree.PreOrderTest;
+import algorithm.node.TreeNode;
 
 /**
  * Description:

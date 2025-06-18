@@ -1,4 +1,4 @@
-package extends_test;
+package inheritance; 
 
 /**
  * Description:
@@ -6,5 +6,5 @@ package extends_test;
  * @author Baltan
  * @date 2017/12/18 15:24
  */
-interface C {
+interface D {
 }

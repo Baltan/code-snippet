@@ -1,4 +1,4 @@
-package junit_test;
+package junit;
 
 /**
  * Description:

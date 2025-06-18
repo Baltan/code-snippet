@@ -1,6 +1,6 @@
-package inner_class_test;
+package inner_class;
 
-import overload_test.Test;
+import overload.Test;
 
 /**
  * Description:

@@ -1,4 +1,4 @@
-package jdbc_test;
+package jdbc;
 
 import java.sql.*;
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package jodd_test;
+package jodd;
 
 import jodd.bean.BeanUtil;
 import jodd.bean.BeanUtilBean;

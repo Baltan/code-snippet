@@ -1,4 +1,4 @@
-package pattern_test.interpreter;
+package pattern.interpreter;
 
 /**
  * Description:

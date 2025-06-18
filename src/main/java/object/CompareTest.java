@@ -1,4 +1,4 @@
-package object_test;
+package object;
 
 import com.alibaba.fastjson.JSONObject;
 import lombok.Data;

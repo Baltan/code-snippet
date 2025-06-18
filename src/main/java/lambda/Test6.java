@@ -1,4 +1,4 @@
-package lambda_test;
+package lambda;
 
 import java.lang.reflect.Method;
 import java.util.Objects;

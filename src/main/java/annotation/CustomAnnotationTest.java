@@ -1,4 +1,4 @@
-package annotation_test;
+package annotation;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;

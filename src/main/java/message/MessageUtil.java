@@ -1,4 +1,4 @@
-package message_test;
+package message;
 
 import cn.hutool.core.codec.Base64;
 import com.dingtalk.api.DefaultDingTalkClient;

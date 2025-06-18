@@ -1,4 +1,4 @@
-package io_test;
+package io;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;

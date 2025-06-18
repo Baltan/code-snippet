@@ -1,4 +1,4 @@
-package string_test;
+package string;
 
 import com.itextpdf.text.pdf.BaseFont;
 

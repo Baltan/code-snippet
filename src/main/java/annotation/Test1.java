@@ -1,4 +1,4 @@
-package annotation_test;
+package annotation;
 
 @MyAnnotation(name = "Baltan", age = 26, nationality = "China")
 public class Test1 {

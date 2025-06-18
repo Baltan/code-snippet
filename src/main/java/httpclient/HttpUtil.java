@@ -1,4 +1,4 @@
-package httpclient_test;
+package httpclient;
 
 import com.alibaba.fastjson.JSON;
 import org.apache.http.*;

@@ -1,4 +1,4 @@
-package netease_music_test;
+package netease_music;
 
 import org.jaudiotagger.audio.AudioFileIO;
 import org.jaudiotagger.audio.exceptions.CannotReadException;

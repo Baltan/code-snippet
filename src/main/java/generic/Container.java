@@ -1,4 +1,4 @@
-package generic_test;
+package generic;
 
 class Container<T> {
 	private T data;

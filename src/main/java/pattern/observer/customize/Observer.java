@@ -1,4 +1,4 @@
-package pattern_test.observer.customize;
+package pattern.observer.customize;
 
 /**
  * Description:

@@ -1,4 +1,4 @@
-package netease_music_test;
+package netease_music;
 
 /**
  * Description:

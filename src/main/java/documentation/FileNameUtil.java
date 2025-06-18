@@ -1,4 +1,4 @@
-package documentation_test;
+package documentation;
 
 import java.io.File;
 import java.util.Arrays;

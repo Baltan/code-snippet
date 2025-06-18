@@ -1,4 +1,4 @@
-package pattern_test.composite;
+package pattern.composite;
 
 /**
  * Description:

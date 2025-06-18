@@ -1,4 +1,4 @@
-package concurrent_test;
+package concurrent;
 
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.DelayQueue;

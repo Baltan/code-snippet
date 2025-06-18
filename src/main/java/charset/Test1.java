@@ -1,4 +1,4 @@
-package charset_test;
+package charset;
 
 import java.io.UnsupportedEncodingException;
 

@@ -1,4 +1,4 @@
-package lambda_test;
+package lambda;
 
 import java.io.File;
 import java.util.ArrayList;

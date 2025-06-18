@@ -1,4 +1,4 @@
-package reflect_test;
+package reflect;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;

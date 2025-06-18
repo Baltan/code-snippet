@@ -1,4 +1,4 @@
-package pattern_test.state;
+package pattern.state;
 
 /**
  * Description:

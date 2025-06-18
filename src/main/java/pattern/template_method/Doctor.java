@@ -1,4 +1,4 @@
-package pattern_test.template_method;
+package pattern.template_method;
 
 /**
  * Description:

@@ -1,4 +1,4 @@
-package io_test;
+package io;
 
 import lombok.SneakyThrows;
 
@@ -14,7 +14,7 @@ public class CreateFileTest {
     @SneakyThrows
     public static void main(String[] args) {
         String path = "/Users/Baltan/Workspaces/IntelliJ IDEA/code-snippet/src/main/java/io_test/A.java";
-        String text = "package io_test;\n\n" +
+        String text = "package io;\n\n" +
                 "public class A {\n" +
                 "    public static void main(String[] args) {\n" +
                 "       System.out.println(\"666\");\n" +

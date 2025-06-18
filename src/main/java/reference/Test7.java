@@ -1,4 +1,4 @@
-package reference_test;
+package reference;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

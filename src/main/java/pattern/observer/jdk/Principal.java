@@ -1,4 +1,4 @@
-package pattern_test.observer.jdk;
+package pattern.observer.jdk;
 
 import java.util.Observable;
 

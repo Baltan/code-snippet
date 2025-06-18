@@ -1,4 +1,4 @@
-package object_test;
+package object;
 
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.collection.ListUtil;

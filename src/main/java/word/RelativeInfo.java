@@ -1,4 +1,4 @@
-package word_test;
+package word;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

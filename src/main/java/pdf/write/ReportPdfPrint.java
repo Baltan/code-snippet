@@ -1,4 +1,4 @@
-package pdf_test.write;
+package pdf.write;
 
 import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.BaseFont;

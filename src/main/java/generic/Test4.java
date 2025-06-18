@@ -1,4 +1,4 @@
-package generic_test;
+package generic;
 
 import java.util.Arrays;
 import java.util.List;

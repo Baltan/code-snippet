@@ -1,4 +1,4 @@
-package pattern_test.proxy.static_proxy;
+package pattern.proxy.static_proxy;
 
 /**
  * Description: 代理类

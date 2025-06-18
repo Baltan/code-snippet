@@ -1,4 +1,4 @@
-package concurrent_test;
+package concurrent;
 
 import cn.hutool.core.bean.BeanUtil;
 import lombok.Data;

@@ -1,4 +1,4 @@
-package lombok_test;
+package lombok;
 
 import lombok.SneakyThrows;
 import lombok.Synchronized;
