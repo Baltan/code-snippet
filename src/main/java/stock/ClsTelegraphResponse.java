@@ -1,4 +1,4 @@
-package news;
+package stock;
 
 import com.alibaba.fastjson.annotation.JSONField;
 import lombok.experimental.Accessors;

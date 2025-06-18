@@ -1,4 +1,4 @@
-package news;
+package stock;
 
 import lombok.experimental.Accessors;
 

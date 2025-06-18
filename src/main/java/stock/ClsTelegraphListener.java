@@ -1,4 +1,4 @@
-package news;
+package stock;
 
 import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.date.DateUtil;
@@ -30,7 +30,10 @@ public class ClsTelegraphListener {
     private static final Set<String> SEND_MESSAGE_LEVELS = Sets.newHashSet("A", "B");
     private static final Long NEWS_EXPIRE_SECONDS = 30L;
 
-    public static void main(String[] args) {
+    /**
+     * 启动任务
+     */
+    public static void start() {
         while (true) {
             if (LocalTime.now().isAfter(END_TIME)) {
                 break;
@@ -44,7 +47,10 @@ public class ClsTelegraphListener {
         }
     }
 
-    public static void startListening() {
+    /**
+     * 开始监听接口
+     */
+    private static void startListening() {
         try (HttpResponse response = HttpUtil.createGet(URL).execute()) {
             if (response.isOk()) {
                 ClsTelegraphResponse clsTelegraphResponse = JSON.parseObject(response.body(), ClsTelegraphResponse.class);
@@ -60,17 +66,7 @@ public class ClsTelegraphListener {
                                     if (LocalDateTimeUtil.between(newsTime, LocalDateTime.now(), ChronoUnit.SECONDS) > NEWS_EXPIRE_SECONDS) {
                                         return;
                                     }
-                                    StringBuilder content = new StringBuilder(String.format("【消息级别】  %s\n【消息时间】  %s\n【消息内容】\n%s",
-                                            Optional.ofNullable(rollDatum.getLevel()).orElse(""),
-                                            LocalDateTimeUtil.formatNormal(newsTime),
-                                            rollDatum.getContent()));
-                                    if (CollUtil.isNotEmpty(rollDatum.getStockList())) {
-                                        content.append("\n【关联股票】\n");
-                                        for (ClsTelegraphResponse.Data.RollDatum.Stock stock : rollDatum.getStockList()) {
-                                            content.append(String.format("%s （%s）\t", stock.getName(), stock.getStockId()));
-                                        }
-                                    }
-                                    MessageUtil.sendMessage(content.toString(), ObjectUtil.equals(rollDatum.getLevel(), "A"));
+                                    notice(rollDatum, newsTime);
                                 }
                             });
                 }
@@ -78,5 +74,25 @@ public class ClsTelegraphListener {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    /**
+     * 消息通知
+     *
+     * @param rollDatum
+     * @param newsTime
+     */
+    private static void notice(ClsTelegraphResponse.Data.RollDatum rollDatum, LocalDateTime newsTime) {
+        StringBuilder content = new StringBuilder(String.format("【消息级别】  %s\n【消息时间】  %s\n【消息内容】\n%s",
+                Optional.ofNullable(rollDatum.getLevel()).orElse(""),
+                LocalDateTimeUtil.formatNormal(newsTime),
+                rollDatum.getContent()));
+        if (CollUtil.isNotEmpty(rollDatum.getStockList())) {
+            content.append("\n【关联股票】\n");
+            for (ClsTelegraphResponse.Data.RollDatum.Stock stock : rollDatum.getStockList()) {
+                content.append(String.format("%s （%s）\t", stock.getName(), stock.getStockId()));
+            }
+        }
+        MessageUtil.sendMessage(content.toString(), ObjectUtil.equals(rollDatum.getLevel(), "A"));
     }
 }

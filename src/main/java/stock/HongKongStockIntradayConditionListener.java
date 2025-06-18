@@ -1,4 +1,4 @@
-package news;
+package stock;
 
 import cn.hutool.http.HttpResponse;
 import cn.hutool.http.HttpUtil;
@@ -26,7 +26,10 @@ public class HongKongStockIntradayConditionListener {
     private static final Integer CONSECUTIVE_RISING_STOCK_DEQUE_SIZE = 5;
     private static final ConcurrentHashMap<String, Deque<HongKongStockIntradayConditionResponse.Data.Stock>> CONSECUTIVE_RISING_STOCK_MAP = new ConcurrentHashMap<>();
 
-    public static void main(String[] args) {
+    /**
+     * 启动任务
+     */
+    public static void start() {
         while (true) {
             if (LocalTime.now().isAfter(END_TIME)) {
                 break;
@@ -40,7 +43,10 @@ public class HongKongStockIntradayConditionListener {
         }
     }
 
-    public static void startListening() {
+    /**
+     * 开始监听接口
+     */
+    private static void startListening() {
         try (HttpResponse httpResponse = HttpUtil.createGet(URL).execute()) {
             if (httpResponse.isOk()) {
                 int start = httpResponse.body().indexOf("(") + 1;
