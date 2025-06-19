@@ -28,32 +28,32 @@ public class HongKongStockIntradayConditionResponse {
 
         @lombok.Data
         public static class Stock {
-            private Integer f1;
+            private String f1; // Integer
             /**
              * 最新价（港币（分））
              */
-            private Integer f2;
+            private String f2; // Integer
             /**
              * 涨跌幅（%）
              */
-            private Integer f3;
+            private String f3; // Integer
             /**
              * 涨跌额（港币（分））
              */
-            private Integer f4;
+            private String f4; // Integer
             /**
              * 成交量（股）
              */
-            private Long f5;
+            private String f5; // Long
             /**
              * 成交额（港币（元））
              */
-            private Double f6;
+            private String f6; // Double
             /**
              * 股票代码
              */
             private String f12;
-            private Integer f13;
+            private String f13; // Integer
             /**
              * 股票名称
              */
@@ -61,21 +61,21 @@ public class HongKongStockIntradayConditionResponse {
             /**
              * 最高价（港币（分））
              */
-            private Integer f15;
+            private String f15; // Integer
             /**
              * 最低价（港币（分））
              */
-            private Integer f16;
+            private String f16; // Integer
             /**
              * 今日开盘价（港币（分））
              */
-            private Integer f17;
+            private String f17; // Integer
             /**
              * 昨日收盘价（港币（分））
              */
-            private Integer f18;
-            private Integer f19;
-            private Integer f152;
+            private String f18; // Integer
+            private String f19; // Integer
+            private String f152; // Integer
         }
     }
 }
