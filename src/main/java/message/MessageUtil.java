@@ -4,13 +4,13 @@ import cn.hutool.core.codec.Base64;
 import com.dingtalk.api.DefaultDingTalkClient;
 import com.dingtalk.api.DingTalkClient;
 import com.dingtalk.api.request.OapiRobotSendRequest;
-import com.google.common.collect.Lists;
 import lombok.SneakyThrows;
 
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
+import java.util.List;
 
 /**
  * Description:
@@ -29,12 +29,14 @@ public class MessageUtil {
      *
      * @param content
      * @param atAll
+     * @param atUserIds
+     * @param atMobiles
      */
-    public static void sendMessage(String content, boolean atAll) {
+    public static void sendMessage(String content, Boolean atAll, List<String> atUserIds, List<String> atMobiles) {
         Long timestamp = System.currentTimeMillis();
         String sign = getDingTalkMessageSign(timestamp);
         String url = String.format(URL, timestamp, sign);
-        sendDingTalkMessage(content, url, atAll);
+        sendDingTalkMessage(content, url, atAll, atUserIds, atMobiles);
     }
 
     /**
@@ -58,15 +60,18 @@ public class MessageUtil {
      * @param content
      * @param url
      * @param atAll
+     * @param atUserIds
+     * @param atMobiles
      */
     @SneakyThrows
-    private static void sendDingTalkMessage(String content, String url, boolean atAll) {
+    private static void sendDingTalkMessage(String content, String url, Boolean atAll, List<String> atUserIds, List<String> atMobiles) {
         DingTalkClient client = new DefaultDingTalkClient(url);
         OapiRobotSendRequest req = new OapiRobotSendRequest();
         OapiRobotSendRequest.Text text = new OapiRobotSendRequest.Text();
         text.setContent(content);
         OapiRobotSendRequest.At at = new OapiRobotSendRequest.At();
-        at.setAtUserIds(Lists.newArrayList());
+        at.setAtUserIds(atUserIds);
+        at.setAtMobiles(atMobiles);
         at.setIsAtAll(atAll);
         req.setMsgtype("text");
         req.setText(text);
